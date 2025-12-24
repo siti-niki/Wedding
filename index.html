@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Undangan Pernikahan Niki & Siti</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Musik -->
+    <button id="musicControl" aria-label="Play or Pause Music">
+  <svg id="musicIcon" viewBox="0 0 64 64" aria-hidden="true"><polygon points="16,12 56,32 16,52"/></svg>
+</button>
+    <button id="autoScrollBtn" class="auto-scroll-btn">Auto Scroll: OFF</button>
+    <!-- ===================== COVER ===================== -->
+    <section id="cover">
+        <div class="cover-overlay"></div>
+
+        <div class="cover-content">
+            <h1 class="cover-nama scale-in">Siti & Niki</h1>
+
+            <p class="dear scale-in">Kepada Yth.</p>
+            <p class="dear-target scale-in" id="guestName">Tamu Undangan</p>
+
+            <button id="btnOpen" class="btn-open scale-in">
+      <span>✉️</span> Buka Undangan
+    </button>
+        </div>
+    </section>
+
+    <!-- ===================== OPENING ===================== -->
+    <section id="opening">
+
+        <div class="opening-content">
+
+            <div class="opening-right">
+                <p class="opening-sub scale-in">The Wedding Of</p>
+                <h2 class="opening-nama scale-in">Siti & Niki</h2>
+                <p class="opening-date scale-in">Minggu, 04 Desember 2026</p>
+
+                <button class="btn-save scale-in">
+        <img src="event.svg" class="icon-save">
+        Save The Date
+      </button>
+            </div>
+
+            <div class="opening-ayat scale-in">
+                <p class="ayat">
+                    “Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan untukmu dari jenismu sendiri agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang.”
+                </p>
+                <p class="ayat-sumber">— Ar-Rum : 21</p>
+            </div>
+
+        </div>
+    </section>
+    <!-- ===================== BRIDE & GROOM ===================== -->
+    <section id="bridegroom" class="bridegroom-section">
+
+        <!-- FOTO KECIL BERJALAN -->
+        <div class="mini-slider-block scale-in">
+            <div class="mini-slider">
+                <img src="bm1.jpg">
+                <img src="bm2.jpg">
+                <img src="bm3.jpg">
+                <img src="bm4.jpg">
+                <img src="bm5.jpg">
+
+                <!-- duplikasi supaya tidak putus -->
+                <img src="bm1.jpg">
+                <img src="bm2.jpg">
+                <img src="bm3.jpg">
+                <img src="bm4.jpg">
+                <img src="bm5.jpg">
+            </div>
+        </div>
+        <!-- ===== BRIDE ===== -->
+        <div class="person-block scale-in">
+
+            <div class="photo-wrapper">
+                <div class="photo-slider slide-left">
+                    <img src="bride1.webp" class="portrait">
+                    <img src="bride2.webp" class="portrait">
+                </div>
+            </div>
+
+            <div class="person-info">
+                <h3 class="person-name">Siti Aisah</h3>
+                <p class="person-detail">Putri Bpk. Engkus Kusnadi (Alm.) & Ibu Kanah Rosita</p>
+            </div>
+
+        </div>
+
+        <!-- ===== GROOM ===== -->
+        <div class="person-block scale-in">
+
+            <div class="photo-wrapper">
+                <div class="photo-slider slide-right">
+                    <img src="groom2.webp" class="portrait">
+                    <img src="groom1.webp" class="portrait">
+                </div>
+            </div>
+
+            <div class="person-info">
+                <h3 class="person-name">Niki Suryana</h3>
+                <p class="person-detail">Putra Bpk. Cucu Suwarsa & Ibu Liah</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===================== WEDDING EVENT ===================== -->
+    <section id="wedding-event" class="wedding-event-section">
+
+        <h2 class="event-title scale-in">Wedding Event</h2>
+
+        <!-- FOTO AKAD -->
+        <div class="event-photo-wrapper scale-in">
+            <img src="foto2.webp" class="event-photo" alt="Foto Akad">
+        </div>
+
+        <!-- INFO AKAD -->
+        <div class="event-box scale-in">
+            <h3 class="event-type">Akad Nikah</h3>
+
+            <div class="event-date-box">
+                <span class="event-day">04</span>
+                <div class="event-date-text">
+                    <p class="event-month">Januari</p>
+                    <p class="event-year">2026 • 08.00 WIB</p>
+                </div>
+            </div>
+
+            <p class="event-place">
+                <strong>Kediaman Mempelai Wanita</strong></br>
+                Kp. Cikamadong Rt.06/Rw.12, Ds. Banjaran Wetan, Kec. Banjaran, Kab. Bandung
+            </p>
+
+        </div>
+
+        <!-- FOTO RESEPSI -->
+        <div class="event-photo-wrapper scale-in">
+            <img src="foto3.jpg" class="event-photo" alt="Foto Resepsi">
+        </div>
+
+        <!-- INFO RESEPSI -->
+        <div class="event-box scale-in">
+            <h3 class="event-type">Resepsi</h3>
+
+            <div class="event-date-box">
+                <span class="event-day">04</span>
+                <div class="event-date-text">
+                    <p class="event-month">Januari</p>
+                    <p class="event-year">2026 • 10.00 WIB</p>
+                </div>
+            </div>
+
+            <p class="event-place">
+                <strong>Kediaman Mempelai Wanita</strong></br>
+                Kp. Cikamadong Rt.06/Rw.12, Ds. Banjaran Wetan, Kec. Banjaran, Kab. Bandung
+            </p>
+            <iframe
+                src="https://www.google.com/maps?q=-7.0736943,107.6040335&output=embed"
+                loading="lazy">
+            </iframe>
+            <a class="map-btn" target="_blank" href="https://maps.app.goo.gl/D4fwzy1zQw44xWr46">Lihat Lokasi</a>
+        </div>
+
+    </section>
+
+    <!-- ===================== EVENT COUNTDOWN ===================== -->
+    <section id="countdown-section" class="countdown-section">
+
+        <h2 class="countdown-title scale-in">Hitung Mundur Acara</h2>
+
+        <!-- FOTO FRAME JENDELA -->
+        <div class="countdown-photo-frame scale-in">
+            <img src="countdownpict.png" class="countdown-photo" alt="Foto Countdown">
+        </div>
+
+        <!-- COUNTDOWN -->
+        <div class="countdown-box scale-in">
+
+            <div id="countdown" class="countdown-wrapper">
+                <div class="time-box">
+                    <span id="days" class="time-number">00</span>
+                    <p class="time-label">Hari</p>
+                </div>
+
+                <div class="time-box">
+                    <span id="hours" class="time-number">00</span>
+                    <p class="time-label">Jam</p>
+                </div>
+
+                <div class="time-box">
+                    <span id="minutes" class="time-number">00</span>
+                    <p class="time-label">Menit</p>
+                </div>
+
+                <div class="time-box">
+                    <span id="seconds" class="time-number">00</span>
+                    <p class="time-label">Detik</p>
+                </div>
+            </div>
+
+            <p id="countdown-message" class="countdown-message"></p>
+
+        </div>
+
+    </section>
+
+    <!-- ===================== BEST MOMENT ===================== -->
+    <section id="best-moment" class="best-moment-section">
+
+        <h2 class="best-moment-title scale-in">Best Moment</h2>
+
+        <div class="best-moment-grid">
+            <img src="cover.jpg" class="bm-photo scale-in zoom-photo" alt="">
+            <img src="foto3.jpg" class="bm-photo scale-in zoom-photo" alt="">
+            <img src="foto2.jpg" class="bm-photo scale-in zoom-photo" alt="">
+            <img src="open.jpg" class="bm-photo scale-in zoom-photo" alt="">
+            <img src="bride2.jpg" class="bm-photo scale-in zoom-photo" alt="">
+            <img src="bm2.jpg" class="bm-photo scale-in zoom-photo" alt="">
+            <img src="bm3.jpg" class="bm-photo scale-in zoom-photo" alt="">
+            <img src="bm4.jpg" class="bm-photo scale-in zoom-photo" alt="">
+        </div>
+
+    </section>
+    <!-- ==== POPUP GALLERY ==== -->
+    <div id="popupGallery" class="popup">
+        <span class="closePopup">&times;</span>
+
+        <img class="popup-img" id="popupImage" src="" alt="">
+
+        <span class="nav prev">&#10094;</span>
+        <span class="nav next">&#10095;</span>
+    </div>
+
+    <section id="love-story" class="love-story-section">
+
+        <h2 class="love-title scale-in">Our Love Story</h2>
+
+        <div class="love-timeline">
+
+            <!-- ITEM 1 -->
+            <div class="love-item scale-in">
+                <div class="love-icon">❤️</div>
+                <div class="love-bubble">
+                    <strong>AWAL BERTEMU</strong>
+                    <p>Pertemuan ini bukan sekadar kebetulan, tetapi bagian dari rencana indah-Nya. Semua bermula dari obrolan sederhana di dunia virtual yang akhirnya membuka jalan bagi cerita baru.</p>
+                </div>
+            </div>
+
+            <!-- ITEM 2 -->
+            <div class="love-item scale-in">
+                <div class="love-icon">❤️</div>
+                <div class="love-bubble">
+                    <strong>MENJALIN HUBUNGAN</strong>
+                    <p>Waktu demi waktu berlalu, canda berubah menjadi perhatian, perhatian menjadi rasa nyaman, hingga akhirnya tumbuh menjadi cinta yang nyata.</p>
+                </div>
+            </div>
+
+            <!-- ITEM 3 -->
+            <div class="love-item scale-in">
+                <div class="love-icon">❤️</div>
+                <div class="love-bubble">
+                    <strong>LAMARAN</strong>
+                    <p>Melalui berbagai perjalanan dan cerita, kami mantap melangkah. Dengan keyakinan yang sama, kami berkomitmen untuk saling menjaga dan menemani dalam setiap suka dan duka.</p>
+                </div>
+            </div>
+
+            <!-- ITEM 4 -->
+            <div class="love-item scale-in">
+                <div class="love-icon">❤️</div>
+                <div class="love-bubble">
+                    <strong>PERNIKAHAN</strong>
+                    <p>Alhamdulillah, hari yang kami nantikan pun tiba. Dengan izin Allah dan restu keluarga, kami mempersatukan niat untuk mengarungi kehidupan bersama selamanya.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="amplop-digital" class="amplop-section">
+
+        <h2 class="amplop-title scale-in">Amplop Digital</h2>
+
+        <div class="amplop-box scale-in">
+            <img src="gift.svg" class="amplop-icon" alt="gift">
+            <p class="amplop-desc">
+                Jika memberi adalah ungkapan tanda kasih Anda. Anda dapat memberi kado secara cashless
+            </p>
+
+            <!-- BANK 1 -->
+            <div class="bank-card">
+                <h3>DANA</h3>
+                <p class="rek-name">a.n Niki Suryana</p>
+                <p class="rek-number" id="rek1">081296801421</p>
+                <button class="copy-btn" data-target="rek1">Copy</button>
+            </div>
+
+            <!-- BANK 2 -->
+            <div class="bank-card">
+                <h3>DANA</h3>
+                <p class="rek-name">a.n Siti Aisah</p>
+                <p class="rek-number" id="rek2">081573754744</p>
+                <button class="copy-btn" data-target="rek2">Copy</button>
+            </div>
+
+            <!-- ALAMAT PENERIMA KADO -->
+            <div class="gift-address">
+                <h3>Kirim Kado</h3>
+                <p>Siti Aisah</p>
+                <p>Kp. Cikamadong Rt.06/Rw.12, Ds. Banjaran Wetan, Kec. Banjaran, Kab. Bandung</p>
+
+                <a href="https://wa.me/62895334914950" class="wa-btn">
+        Hubungi via WhatsApp
+      </a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="rsvp" class="rsvp-section hidden">
+        <div class="rsvp-wrapper">
+
+            <h2 class="rsvp-title scale-in">Share Your Blessings</h2>
+
+            <!-- FORM -->
+            <form id="rsvpForm" class="rsvp-form scale-in">
+                <input type="text" id="nama" placeholder="Your Name" required>
+
+                <select id="kehadiran" required>
+        <option value="">I'm planning to attend</option>
+        <option value="Attend">I will attend</option>
+        <option value="Not Attend">Sorry, I can't attend</option>
+      </select>
+
+                <textarea id="ucapan" placeholder="Your message..." rows="3"></textarea>
+
+                <button type="submit" class="send-btn">Send</button>
+                <p id="message" class="status-msg"></p>
+            </form>
+
+            <!-- TITLE -->
+            <div class="section-title scale-in">
+                <div class="line-title"></div>
+                <h3>Attendance</h3>
+                <div class="line-title"></div>
+            </div>
+
+            <!-- STATISTIK -->
+            <div class="stats-clean scale-in">
+                <div class="stat-item">
+                    <span id="totalCount" class="stat-number">0</span>
+                    <p class="stat-label">Total Guests</p>
+                </div>
+
+                <div class="stat-item">
+                    <span id="hadirCount" class="stat-number">0</span>
+                    <p class="stat-label">Attending</p>
+                </div>
+
+                <div class="stat-item">
+                    <span id="tidakHadirCount" class="stat-number">0</span>
+                    <p class="stat-label">Not Attending</p>
+                </div>
+            </div>
+
+            <!-- LIST UCAPAN -->
+            <div class="ucapan-box scale-in">
+                <p class="ucapan-info" id="ucapanInfo"></p>
+                <div class="ucapan-list" id="messagesList"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="thankyou" class="thankyou-section">
+        <div class="thankyou-overlay"></div>
+
+        <div class="thankyou-content">
+            <h3 class="thankyou-title scale-in">Thank You</h3>
+            <p class="thankyou-names scale-in">Siti & Niki</p>
+        </div>
+    </section>
+
+    <audio id="music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script src="script.js"></script>
+
+</body>
+</html>
