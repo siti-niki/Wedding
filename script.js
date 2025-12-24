@@ -257,7 +257,7 @@
                     list.innerHTML = "";
 
                     // Update info above the box
-                    const infoText = `Showing ${latestData.length} of ${records.length} messages`;
+                    const infoText = `Menampilkan ${latestData.length} Dari ${records.length} Pesan`;
                     document.getElementById("ucapanInfo").textContent = infoText;
 
                     // ============ NEW MESSAGE CARD ==============
@@ -379,10 +379,10 @@
 
             if (autoScrollActive) {
                 startAutoScroll();
-                autoScrollBtn.textContent = "Auto Scroll: ON";
+                autoScrollBtn.textContent = "Scroll Otomatis: ON";
             } else {
                 stopAutoScroll();
-                autoScrollBtn.textContent = "Auto Scroll: OFF";
+                autoScrollBtn.textContent = "Scroll Otomatis: OFF";
             }
         });
 
@@ -391,7 +391,7 @@
             if (autoScrollActive) {
                 autoScrollActive = false;
                 stopAutoScroll();
-                autoScrollBtn.textContent = "Auto Scroll: OFF";
+                autoScrollBtn.textContent = "Scroll Otomatis: OFF";
             }
         });
 
@@ -399,6 +399,6 @@
             if (autoScrollActive) {
                 autoScrollActive = false;
                 stopAutoScroll();
-                autoScrollBtn.textContent = "Auto Scroll: OFF";
+                autoScrollBtn.textContent = "Scroll Otomatis: OFF";
             }
         });
