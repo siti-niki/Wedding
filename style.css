@@ -204,6 +204,12 @@ body.opened {
     color: #c9a15d;
 }
 
+iframe {
+    width: 100% !important;
+    border-radius: 15px;
+    border: none;
+}
+
 .map-btn {
     display: inline-block;
     margin-top: 15px;
