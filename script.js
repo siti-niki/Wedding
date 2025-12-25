@@ -160,9 +160,9 @@
         /* ==========================
            KONFIGURASI UMUM
            ========================== */
-        const DEFAULT_SHEET_ID = "1Ea30xRm9JGPyAXT-w--eEm589-fc30ky6DQaBpIfF30"; // default spreadsheet kamu
-        const DEFAULT_SHEET_NAME = ""; // kosong = ambil sheet pertama
-        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyi4JnOqX1zpZVOOFqXDsV2Mo20xKCK1O1DIvorL88t_bFJhJRTUeQFl1-76gQzh1MDwg/exec"; // ganti dgn URL Apps Script universal kamu
+        const DEFAULT_SHEET_ID = "1Pts3QAJ_R46zkpSYc-zZ1jgQgbtR-ZjtWgwU9eheSxU"; // default spreadsheet kamu
+        const DEFAULT_SHEET_NAME = "RSVP"; // kosong = ambil sheet pertama
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzd3gJrWY8-Qb1WGAzuU_Xl5tTjNUK9ceR3t_vP1o3yPio9sq3wwgBaKuZrTRG-BFppYA/exec"; // ganti dgn URL Apps Script universal kamu
 
         // 🔹 Ambil sheetId & sheetName dari URL (kalau ada)
         const urlParams = new URLSearchParams(window.location.search);
