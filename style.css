@@ -1,1275 +1,339 @@
-        body {
-            margin: 0;
-            font-family: "Poppins", sans-serif;
-            background: #fff;
-            overflow-x: hidden;
-        }
-
-        /* ================= COVER ================= */
-
-        #cover {
-            position: fixed;
-            inset: 0;
-            width: 100%;
-            height: 100vh;
-            background: url('images/cover.webp') center/cover no-repeat;
-            z-index: 99;
-            transition: transform 1s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        #cover.hide {
-            transform: translateY(-100%);
-        }
-
-        .cover-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.55);
-        }
-
-        .cover-content {
-            position: relative;
-            z-index: 2;
-            padding: 0 20px;
-            padding-top: 40vh;
-            /* ⬅️ TURUNIN ISI COVER */
-            text-align: center;
-            color: #fff;
-        }
-
-        .cover-nama {
-            font-family: "Great Vibes", cursive;
-            font-size: 2.5rem;
-            font-weight: 400;
-            margin-bottom: 1rem;
-        }
-
-        .dear {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-
-        .dear-target {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-        }
-
-        /* BUTTON */
-
-        .btn-open {
-            background: rgba(255, 255, 255, 0.12);
-            color: #fff;
-            padding: 8px 14px;
-            border: 1px solid #fff;
-            border-radius: 10px;
-            font-size: 1rem;
-            cursor: pointer;
-            backdrop-filter: blur(2px);
-            transition: 0.3s;
-        }
-
-        .btn-open:hover {
-            background: rgba(255, 255, 255, 0.25);
-        }
-
-        .catatan {
-            margin-top: 1.4rem;
-            font-size: 0.8rem;
-            opacity: 0.9;
-            padding: 0 30px;
-        }
-
-        /* ================= OPENING ================= */
-
-        #opening {
-            min-height: 100vh;
-            padding: 0px 25px;
-            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('images/open.webp') center/cover no-repeat;
-            color: #fff;
-            position: fixed;
-            inset: 0;
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            transform: translateY(100%);
-            opacity: 0;
-            transition: transform 1s ease, opacity .7s ease;
-            z-index: 90;
-        }
-
-        /* OPENING naik */
-
-        #opening.show {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        /* Setelah animasi selesai → jadi scroll normal */
-
-        body.opened #opening {
-            position: relative;
-            height: auto;
-        }
-
-        /* BAGIAN TEKS KANAN */
-
-        .opening-right {
-            width: fit-content;
-            margin-left: auto;
-            margin-right: 15px;
-            text-align: right;
-        }
-
-        .opening-sub {
-            font-family: "Playfair Display", serif;
-            font-size: 1rem;
-            opacity: 0.9;
-        }
-
-        .opening-nama {
-            font-family: "Great Vibes", cursive;
-            font-size: 2.5rem;
-            margin: 5px 0 10px;
-            font-weight: 280;
-        }
-
-        .opening-date {
-            font-family: "Poppins", sans-serif;
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-        }
-
-        /* SAVE THE DATE BUTTON */
-
-        .btn-save {
-            background: rgba(255, 255, 255, 0.12);
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            color: #fff;
-            padding: 8px 20px;
-            border-radius: 10px;
-            font-size: 0.8rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            backdrop-filter: blur(3px);
-        }
-
-        .icon-save {
-            width: 20px;
-            height: 20px;
-            object-fit: contain;
-            filter: brightness(0) invert(1);
-        }
-
-        /* AYAT */
-
-        .opening-ayat {
-            max-width: 600px;
-            margin-left: auto;
-            /* geser ke kanan */
-            margin-right: 15px;
-            /* jarak aman dari tepi kanan */
-            text-align: center;
-            /* teks rata kanan */
-            box-sizing: border-box;
-        }
-
-        .ayat {
-            font-size: 0.7rem;
-            line-height: 1.6;
-        }
-
-        .ayat-sumber {
-            font-family: "Playfair Display", serif;
-            font-size: 0.9rem;
-            margin-top: 5px;
-        }
-
-        /* ANIMASI SCALE-IN */
-
-        .scale-in {
-            opacity: 0;
-            transform: translateY(20px) scale(0.6);
-            transition: opacity .7s ease, transform .7s ease;
-        }
-
-        .scale-in.show {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-
-        /* ================= BRIDE & GROOM SECTION ================= */
-
-        /* ================= BRIDE & GROOM SECTION ================= */
-
-        .bridegroom-section {
-            padding: 60px 20px;
-            background: #fff;
-            z-index: 5;
-            position: relative;
-        }
-
-        /* sebelum opening selesai → bridegroom disembunyiin total */
-
-        body:not(.opened) #bridegroom {
-            visibility: hidden;
-        }
-
-        /* setelah opening selesai (body.opened ditambah di JS) → baru kelihatan */
-
-        body.opened #bridegroom {
-            visibility: visible;
-        }
-
-        /* blok mempelai */
-
-        .person-block {
-            width: 100%;
-            margin-bottom: 60px;
-            position: relative;
-        }
-
-        /* FOTO PORTRAIT */
-
-        .photo-wrapper {
-            width: 100%;
-            max-width: 360px;
-            margin: 0 auto;
-            overflow: hidden;
-            border-radius: 12px;
-            position: relative;
-        }
-
-        /* slider foto */
-
-        .photo-slider {
-            display: flex;
-            width: 200%;
-        }
-
-        .slide-left {
-            animation: slideLeft 4s linear infinite;
-        }
-
-        .slide-right {
-            animation: slideRight 5s linear infinite;
-        }
-
-        /* Bride → geser ke kiri */
-
-        @keyframes slideLeft {
-            0%,
-            45% {
-                transform: translateX(0);
-            }
-            55%,
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-
-        /* Groom → geser ke kanan (kebalikan bride) */
-
-        @keyframes slideRight {
-            0%,
-            45% {
-                transform: translateX(-50%);
-            }
-            55%,
-            100% {
-                transform: translateX(0);
-            }
-        }
-
-        .portrait {
-            width: 100%;
-            height: 480px;
-            object-fit: cover;
-        }
-
-        .person-info {
-            width: 90%;
-            max-width: 350px;
-            margin: -40px auto 0;
-            /* auto = center */
-            background: rgba(255, 255, 255, 0.92);
-            border-radius: 12px;
-            padding: 15px 18px;
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
-            backdrop-filter: blur(4px);
-            text-align: center;
-            position: relative;
-            z-index: 3;
-            /* prevent drag/geser */
-            touch-action: none;
-        }
-
-        .person-name {
-            font-family: "Playfair Display", serif;
-            font-size: 1.2rem;
-            margin: 0 0 5px;
-        }
-
-        .person-detail {
-            font-size: 0.8rem;
-            opacity: 0.8;
-            margin-bottom: 12px;
-        }
-
-        /* INSTAGRAM BUTTON */
-
-        .ig-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: #00000015;
-            border: 1px solid #00000030;
-            padding: 6px 14px;
-            border-radius: 8px;
-            color: #000;
-            font-size: 0.8rem;
-            text-decoration: none;
-        }
-
-        .ig-btn img {
-            width: 16px;
-            height: 16px;
-        }
-
-        #bridegroom {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity .7s ease, transform .7s ease;
-        }
-
-        #bridegroom.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ========== MINI SLIDER FOTO KECIL ========== */
-
-        .mini-slider-block {
-            width: 100%;
-            overflow: hidden;
-            margin: 0 auto 40px;
-            padding: 10px 0;
-        }
-
-        .mini-slider {
-            display: flex;
-            gap: 10px;
-            width: max-content;
-            animation: miniSlide 18s linear infinite;
-        }
-
-        .mini-slider img {
-            width: 90px;
-            height: 110px;
-            border-radius: 10px;
-            object-fit: cover;
-            flex-shrink: 0;
-        }
-
-        @keyframes miniSlide {
-            0% {
-                transform: translateX(-50%);
-            }
-            100% {
-                transform: translateX(0);
-            }
-        }
-
-        /* ===================== WEDDING EVENT ===================== */
-
-        .wedding-event-section {
-            padding: 70px 25px 90px;
-            text-align: center;
-            background: #fff;
-        }
-
-        .event-title {
-            font-family: "Playfair Display", serif;
-            font-size: 1.9rem;
-            margin-bottom: 40px;
-            color: #3a3a3a;
-        }
-
-        /* FOTO EVENT */
-
-        .event-photo-wrapper {
-            width: 100%;
-            max-width: 420px;
-            margin: 0 auto 25px;
-        }
-
-        .event-photo {
-            width: 100%;
-            border-radius: 12px;
-            object-fit: cover;
-        }
-
-        /* BOX INFO EVENT */
-
-        .event-box {
-            background: #ffffff;
-            border-radius: 14px;
-            padding: 25px 22px;
-            margin: -20px auto 40px;
-            max-width: 460px;
-            position: relative;
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.04);
-            
-        }
-
-        .event-type {
-            font-family: "Playfair Display", serif;
-            font-size: 1.6rem;
-            margin-bottom: 16px;
-            color: #7a623c;
-        }
-
-        /* TANGGAL ANGKA BESAR */
-
-        .event-date-box {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 14px;
-            margin-bottom: 12px;
-        }
-
-        .event-day {
-            font-size: 3.2rem;
-            font-family: "Playfair Display", serif;
-            font-weight: 600;
-            color: #c9a15d;
-            /* emas Jawa */
-        }
-
-        .event-date-text {
-            text-align: left;
-        }
-
-        .event-month {
-            font-size: 1rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
-
-        .event-year {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        .event-place {
-            font-size: 0.85rem;
-            margin: 12px 0;
-            line-height: 1.5;
-        }
-
-        /* MAP BUTTON */
-
-        .map-btn {
-            display: inline-block;
-            margin-top: 10px;
-            background: #7a623c;
-            padding: 8px 18px;
-            border-radius: 8px;
-            color: #fff;
-            font-size: 0.85rem;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .map-btn:hover {
-            background: #b3853b;
-        }
-        
-        iframe {
-            width: 100%;
-            height: 300px;
-            border-radius: 15px;
-            border: 0;
-        }
-
-        /* ===================== EVENT COUNTDOWN ===================== */
-
-        .countdown-section {
-            padding: 70px 25px 90px;
-            background: #fff;
-            text-align: center;
-        }
-
-        .countdown-title {
-            font-family: "Playfair Display", serif;
-            font-size: 1.8rem;
-            margin-bottom: 35px;
-            color: #3a3a3a;
-        }
-
-        /* FRAME JENDELA */
-
-        .countdown-photo-frame {
-            width: 100%;
-            max-width: 420px;
-            margin: 0 auto 25px;
-            overflow: hidden;
-            border-radius: 22px 22px 0 0;
-            /* rounded atas */
-            border: 1px solid #e4e4e4;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-        }
-
-        .countdown-photo {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* BOX COUNTDOWN */
-
-        .countdown-box {
-            margin: 0 auto;
-            max-width: 420px;
-            padding: 18px 10px 22px;
-            border: 1px solid #eaeaea;
-            border-top: none;
-            /* nyambung sama frame */
-            border-radius: 0 0 14px 14px;
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.10);
-        }
-
-        .countdown-wrapper {
-            display: flex;
-            justify-content: space-between;
-            padding: 0 10px;
-        }
-
-        /* BOX PER WAKTU */
-
-        .time-box {
-            width: 22%;
-        }
-
-        .time-number {
-            font-size: 2.4rem;
-            font-family: "Playfair Display", serif;
-            font-weight: 600;
-            color: #c9a15d;
-            /* emas */
-        }
-
-        .time-label {
-            font-size: 0.75rem;
-            margin-top: -3px;
-            opacity: 0.8;
-        }
-
-        /* PESAN SAAT HARI H */
-
-        .countdown-message {
-            margin-top: 16px;
-            font-size: 1rem;
-            font-weight: 600;
-            color: #234a5f;
-        }
-
-        /* ===================== BEST MOMENT ===================== */
-
-        .best-moment-section {
-            padding: 40px 25px 55px;
-            background: #fff;
-            text-align: center;
-        }
-
-        .best-moment-title {
-            font-family: "Playfair Display", serif;
-            font-size: 1.8rem;
-            margin-bottom: 40px;
-            color: #3a3a3a;
-        }
-
-        /* GRID 2 KOLOM */
-
-        .best-moment-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .bm-photo {
-            width: 100%;
-            aspect-ratio: 1/1.3;
-            /* biar portrait */
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
-        }
-
-        /* ===================== PERAPAT JARAK ANTAR SECTION ===================== */
-
-        /* Semua section umum */
-
-        section {
-            padding-top: 40px !important;
-            padding-bottom: 40px !important;
-        }
-
-        /* Khusus section yang sebelumnya terlalu tinggi */
-
-        #opening {
-            padding-top: 2px !important;
-            padding-bottom: 2px !important;
-        }
-
-        #bride-groom {
-            padding-top: 2px !important;
-            padding-bottom: 2px !important;
-        }
-
-        #event-section {
-            padding-top: 2px !important;
-            padding-bottom: 2px !important;
-        }
-
-        #countdown-section {
-            padding-top: 2px !important;
-            padding-bottom: 2px !important;
-        }
-
-        #best-moment {
-            padding-top: 25px !important;
-            padding-bottom: 25px !important;
-        }
-
-        /* Rapetin jarak judul – biar lebih compact */
-
-        .section-title {
-            margin-bottom: 15px !important;
-        }
-
-        /* Rapetin jarak antar elemen di tiap section */
-
-        section * {
-            margin-top: 5px !important;
-            margin-bottom: 5px !important;
-        }
-
-        /* ==== POPUP GALLERY ==== */
-
-        .popup {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(4px);
-            z-index: 9999;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .popup-img {
-            max-width: 90%;
-            max-height: 85vh;
-            object-fit: contain;
-            border-radius: 10px;
-        }
-
-        .closePopup {
-            position: absolute;
-            top: 18px;
-            right: 20px;
-            font-size: 35px;
-            color: #fff;
-            cursor: pointer;
-            z-index: 11000;
-        }
-
-        .nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 45px;
-            color: #fff;
-            cursor: pointer;
-            user-select: none;
-            padding: 10px 15px;
-        }
-
-        .prev {
-            left: 20px;
-        }
-
-        .next {
-            right: 20px;
-        }
-
-        .nav:hover,
-        .closePopup:hover {
-            color: #f0c674;
-        }
-
-        /* === GLOBAL WIDTH FIX (AGAR TIDAK MELEBAR DI HP) === */
-
-        .container-limit,
-        section,
-        .best-moment-section,
-        .bride-groom-section,
-        .wedding-event-section,
-        .countdown-section {
-            width: 100%;
-            max-width: 430px;
-            /* ⬅️ Batas HP (iPhone/Android standar) */
-            margin: 0 auto;
-            /* Tengah otomatis */
-            box-sizing: border-box;
-            padding-left: 15px;
-            padding-right: 15px;
-        }
-
-        /* ========= LOVE STORY SECTION ========= */
-
-        .love-story-section {
-            text-align: center;
-            padding-top: 40px;
-            padding-bottom: 40px;
-        }
-
-        .love-title {
-            font-family: "Playfair Display", serif;
-            font-size: 1.6rem;
-            margin-bottom: 25px;
-        }
-
-        /* Timeline container */
-
-        .love-timeline {
-            position: relative;
-            margin: 0 auto;
-            padding-left: 25px;
-            padding-right: 25px;
-        }
-
-        /* Garis vertikal penghubung */
-
-        .love-timeline::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 2px;
-            height: 100%;
-            background: #d6c29e;
-            transform: translateX(-50%);
-            opacity: 0.6;
-        }
-
-        /* Setiap item */
-
-        .love-item {
-            position: relative;
-            margin-bottom: 30px;
-        }
-
-        /* Icon love */
-
-        .love-icon {
-            font-size: 1.5rem;
-            background: #fff;
-            border: 2px solid #d6c29e;
-            padding: 6px 10px;
-            border-radius: 50%;
-            position: relative;
-            z-index: 3;
-            width: 20px;
-            height: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto 12px;
-        }
-
-        /* Chat bubble */
-
-        .love-bubble {
-            background: #ffffff;
-            border-radius: 10px;
-            padding: 12px 15px;
-            max-width: 300px;
-            margin: 0 auto;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            border: 1px solid #e8e0ce;
-        }
-
-        .love-bubble p {
-            margin: 0;
-            font-size: 0.85rem;
-            color: #444;
-            line-height: 1.5;
-        }
-
-        /* ======= AMPLOP DIGITAL ======= */
-
-        .amplop-section {
-            text-align: center;
-            padding-top: 40px;
-            padding-bottom: 40px;
-        }
-
-        .amplop-title {
-            font-family: "Playfair Display", serif;
-            font-size: 1.6rem;
-            margin-bottom: 25px;
-        }
-
-        /* BOX UTAMA */
-
-        .amplop-box {
-            background: #fff;
-            border-radius: 12px;
-            padding: 20px 18px;
-            max-width: 430px;
-            margin: 0 auto;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
-            border: 1px solid #e8e0ce;
-        }
-
-        /* ICON */
-
-        .amplop-icon {
-            width: 60px;
-            margin-bottom: 15px;
-            opacity: 0.9;
-        }
-
-        .amplop-desc {
-            font-size: 0.9rem;
-            color: #444;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-
-        /* BANK CARD */
-
-        .bank-card {
-            background: #faf7f1;
-            border: 1px solid #d4c2a3;
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 15px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-        }
-
-        .bank-card h3 {
-            margin: 0;
-            font-size: 1.1rem;
-            color: #7a623c;
-        }
-
-        .rek-name {
-            margin: 5px 0;
-            font-size: 0.85rem;
-            color: #555;
-        }
-
-        .rek-number {
-            font-size: 1rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-            font-family: monospace;
-        }
-
-        /* TOMBOL COPY */
-
-        .copy-btn {
-            background: #7a623c;
-            color: #fff;
-            border: none;
-            padding: 7px 12px;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .copy-btn:hover {
-            background: #a38757;
-        }
-
-        /* ALAMAT KADO */
-
-        .gift-address {
-            margin-top: 20px;
-            background: #fff9ef;
-            padding: 15px;
-            border-radius: 10px;
-            border: 1px solid #e8d8b8;
-        }
-
-        .gift-address h3 {
-            margin: 0 0 5px 0;
-            color: #7a623c;
-            font-size: 1.1rem;
-        }
-
-        .gift-address p {
-            font-size: 0.85rem;
-            margin: 3px 0;
-        }
-
-        /* TOMBOL WA */
-
-        .wa-btn {
-            display: inline-block;
-            margin-top: 10px;
-            background: #25D366;
-            color: #fff;
-            padding: 8px 14px;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            text-decoration: none;
-        }
-
-        .wa-btn:hover {
-            background: #1ebe5d;
-        }
-
-        /* ============================
-   RSVP SECTION FULL FIX
-============================ */
-
-        .rsvp-section {
-            width: 100%;
-            padding: 40px 20px;
-            background: #fafafa;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-        }
-
-        .rsvp-wrapper {
-            width: 100%;
-            max-width: 430px;
-        }
-
-        /* Title */
-
-        .rsvp-title {
-            font-family: "Playfair Display", serif;
-            font-size: 26px;
-            text-align: center;
-            color: #000;
-            margin-bottom: 25px;
-        }
-
-        /* Animasi */
-
-        .scale-in {
-            opacity: 0;
-            transform: scale(0.8);
-            transition: all .8s ease;
-        }
-
-        .scale-in.visible {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        /* Form */
-
-        .rsvp-form {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-bottom: 30px;
-        }
-
-        .rsvp-form input,
-        .rsvp-form select,
-        .rsvp-form textarea {
-            width: 100%;
-            background: #fff;
-            border: 1px solid #ddd;
-            padding: 12px;
-            border-radius: 8px;
-        }
-
-        /* Send button */
-
-        .send-btn {
-            align-self: flex-start;
-            padding: 6px 18px;
-            border-bottom: 2px solid #000;
-            background: transparent;
-            cursor: pointer;
-        }
-
-        /* TITLE BAR */
-
-        .section-title {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 12px;
-            margin: 35px 0;
-        }
-
-        .section-title h3 {
-            background: #fff;
-            padding: 8px 55px;
-            border-radius: 18px;
-            color: #333;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .line-title {
-            flex: 1;
-            height: 1px;
-            background: linear-gradient(to right, transparent, #c4bcb2, transparent);
-        }
-
-        /* Stats */
-
-        .stats-clean {
-            display: flex;
-            justify-content: space-between;
-            gap: 14px;
-            margin-bottom: 30px;
-        }
-
-        .stat-item {
-            flex: 1;
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 20px;
-            font-weight: 500;
-            color: #333;
-        }
-
-        .stat-label {
-            font-size: 13px;
-            color: #7d746b;
-        }
-
-        /* UCAPAN BOX */
-
-        .ucapan-box {
-            background: #faf7f2;
-            border-radius: 14px;
-            padding: 15px;
-            border: 1px solid #eee2d7;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-        }
-
-        .ucapan-list {
-            max-height: 300px;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-            padding-right: 4px;
-        }
-
-        .ucapan-item {
-            background: #fff;
-            padding: 14px;
-            border-radius: 12px;
-            border: 1px solid #eee;
-            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.07);
-        }
-
-        .ucapan-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 6px;
-        }
-
-        .ucapan-status {
-            background: #f5f3f0;
-            padding: 2px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-            color: #555;
-        }
-
-        .ucapan-text {
-            color: #444;
-            font-size: 14px;
-            line-height: 1.5;
-        }
-
-        /* ==== FIX PLACEHOLDER & INPUT BIAR TIDAK LUBER ==== */
-
-        #rsvp input,
-        #rsvp select,
-        #rsvp textarea {
-            box-sizing: border-box !important;
-            /* padding + border ikut dihitung */
-            width: 100% !important;
-            /* pastikan pas ke layar */
-            max-width: 100% !important;
-            /* cegah melewati batas */
-            display: block !important;
-            /* aman di semua device */
-        }
-
-        /* Placeholder biar tetap rapi */
-
-        #rsvp input::placeholder,
-        #rsvp textarea::placeholder {
-            color: #888;
-            opacity: 1;
-        }
-
-        /* ===================== THANK YOU SECTION ===================== */
-
-        .thankyou-section {
-            position: relative;
-            width: 100%;
-            min-height: 70vh;
-            /* tinggi fleksibel */
-            background: url('images/cover.webp') center/cover no-repeat;
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            padding-bottom: 60px;
-        }
-
-        /* Lapisan hitam transparan */
-
-        .thankyou-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.45);
-            /* bisa digelapkan 0.6 kalau mau lebih kontras */
-            z-index: 1;
-        }
-
-        /* Konten teks */
-
-        .thankyou-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            padding: 0 20px;
-        }
-
-        /* Judul */
-
-        .thankyou-title {
-            font-family: "Playfair Display", serif;
-            font-size: 1.7rem;
-            font-weight: 400;
-            color: #fff;
-            text-shadow: 0 3px 12px rgba(0, 0, 0, 0.6);
-            margin-bottom: 8px;
-        }
-
-        /* Nama mempelai */
-
-        .thankyou-names {
-            font-family: "Great Vibes", cursive;
-            font-size: 2.8rem;
-            color: #fff;
-            text-shadow: 0 3px 12px rgba(0, 0, 0, 0.65);
-        }
-
-        /* Animasi scale-in */
-
-        .thankyou-title.scale-in,
-        .thankyou-names.scale-in {
-            opacity: 0;
-            transform: translateY(20px) scale(0.7);
-            transition: opacity .8s ease, transform .8s ease;
-        }
-
-        .thankyou-title.scale-in.show,
-        .thankyou-names.scale-in.show {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-
-        /* === MUSIK CONTROL (GAYA KACA BLUR) === */
-
-        #musicControl {
-            position: fixed;
-            right: 18px;
-            bottom: calc(8dvh + env(safe-area-inset-bottom));
-            width: 58px;
-            height: 58px;
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            border-radius: 50%;
-            backdrop-filter: blur(10px) saturate(180%);
-            -webkit-backdrop-filter: blur(10px) saturate(180%);
-            background: rgba(0, 0, 0, 0.5);
-            color: #fff;
-            cursor: pointer;
-            display: none;
-            /* tetap tersembunyi sebelum aktif */
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
-            transition: all 0.3s ease;
-        }
-
-        #musicControl svg {
-            width: 28px;
-            height: 28px;
-            fill: #fff;
-            filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.5));
-        }
-
-        #musicControl:hover {
-            transform: scale(1.08);
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        #musicControl.playing {
-            animation: spin 4s linear infinite;
-        }
-
-        @keyframes spin {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        .auto-scroll-btn {
-            position: fixed;
-            top: 18px;
-            /* ⬅️ pojok kiri atas */
-            left: 18px;
-            padding: 8px 14px;
-            font-size: 12px;
-            background: rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(6px);
-            color: #fff;
-            border-radius: 20px;
-            cursor: pointer;
-            z-index: 2000;
-            transition: .3s;
-        }
-
-        .auto-scroll-btn:hover {
-            background: rgba(0, 0, 0, 0.4);
-            transform: scale(1.04);
-        }
+/* ============================================================
+   GLOBAL & RESET
+   ============================================================ */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #fff;
+    overflow-x: hidden;
+    /* Mencegah scroll manual sebelum undangan dibuka */
+    overflow-y: hidden; 
+}
+
+body.opened {
+    overflow-y: auto;
+}
+
+/* ================= COVER ================= */
+#cover {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    background: url('images/cover.webp') center/cover no-repeat;
+    z-index: 99;
+    transition: transform 1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#cover.hide {
+    transform: translateY(-100%);
+}
+
+.cover-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.cover-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+    padding-top: 40vh;
+    text-align: center;
+    color: #fff;
+}
+
+.cover-nama {
+    font-family: "Great Vibes", cursive;
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.dear {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.dear-target {
+    font-family: "Playfair Display", serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0.5rem 0 1.5rem;
+}
+
+.btn-open {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-open:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+/* ================= OPENING ================= */
+#opening {
+    position: relative;
+    min-height: 100vh;
+    background: url('images/open.webp') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 40px 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.opening-content {
+    position: relative;
+    z-index: 2;
+}
+
+.opening-nama {
+    font-family: "Great Vibes", cursive;
+    font-size: 3rem;
+    margin: 10px 0;
+}
+
+/* ================= BRIDEGROOM ================= */
+.bridegroom-section {
+    padding: 60px 20px;
+    background: #fdfbf8;
+    text-align: center;
+}
+
+.mini-slider-block {
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.mini-slider {
+    display: flex;
+    gap: 10px;
+    animation: slideLoop 20s linear infinite;
+}
+
+.mini-slider img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+@keyframes slideLoop {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.person-block {
+    margin-bottom: 50px;
+}
+
+.photo-wrapper {
+    width: 200px;
+    height: 280px;
+    margin: 0 auto 20px;
+    border-radius: 100px 100px 0 0;
+    overflow: hidden;
+    border: 5px solid #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.portrait {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.person-name {
+    font-family: "Great Vibes", cursive;
+    font-size: 2.2rem;
+    margin: 10px 0 5px;
+    color: #4a4a4a;
+}
+
+.person-detail {
+    font-size: 0.85rem;
+    color: #777;
+    line-height: 1.6;
+}
+
+/* ================= EVENT ================= */
+.wedding-event-section {
+    padding: 60px 20px;
+    background: #fff;
+}
+
+.event-box {
+    background: #f9f6f2;
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+.event-date-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.event-day {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #c9a15d;
+}
+
+.map-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #c9a15d;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 0.85rem;
+}
+
+/* ================= RSVP & MESSAGES ================= */
+.rsvp-section {
+    padding: 60px 20px;
+    background: #fdfbf8;
+}
+
+.rsvp-form input, .rsvp-form select, .rsvp-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.send-btn {
+    width: 100%;
+    padding: 12px;
+    background: #4a4a4a;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.ucapan-box {
+    margin-top: 40px;
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.ucapan-item {
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: opacity 0.5s ease;
+}
+
+.stats-clean {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 0;
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #c9a15d;
+}
+
+/* ================= CONTROLS ================= */
+#musicControl {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 48px;
+    height: 48px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    display: none; /* Muncul via JS */
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    transition: all 0.3s ease;
+}
+
+#musicControl svg {
+    width: 24px;
+    height: 24px;
+    fill: #fff;
+}
+
+#musicControl.playing {
+    animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.auto-scroll-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 8px 16px;
+    font-size: 11px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    z-index: 2000;
+    cursor: pointer;
+}
+
+/* ================= ANIMATION UTILS ================= */
+.scale-in {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.scale-in.show, .scale-in.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Responsivitas HP */
+@media (max-width: 600px) {
+    .cover-nama { font-size: 2rem; }
+    .opening-nama { font-size: 2.5rem; }
+    .person-name { font-size: 1.8rem; }
+}
