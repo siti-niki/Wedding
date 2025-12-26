@@ -1,10 +1,26 @@
 html, body {
-    max-width: 100%;
-    overflow-x: hidden; /* Mencegah geser kanan-kiri */
-    width: 100%;
-    padding: 0;
     margin: 0;
-    -webkit-text-size-adjust: 100%; /* Mencegah browser otomatis besarin teks */
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    font-family: "Poppins", sans-serif;
+    background: #fff;
+}
+
+body {
+    /* Mencegah scroll manual sebelum undangan dibuka */
+    overflow-y: hidden; 
+}
+
+body.opened {
+    overflow-y: auto;
+}
+
+/* Biar scroll lebih halus di HP */
+html {
+    scroll-behavior: smooth;
 }
 
 /* Pastikan semua gambar tidak lebih lebar dari layar HP */
@@ -17,19 +33,6 @@ img {
 section {
     width: 100%;
     box-sizing: border-box; /* Padding tidak menambah lebar elemen */
-}
-
-body {
-    margin: 0;
-    font-family: "Poppins", sans-serif;
-    background: #fff;
-    overflow-x: hidden;
-    /* Mencegah scroll manual sebelum undangan dibuka */
-    overflow-y: hidden; 
-}
-
-body.opened {
-    overflow-y: auto;
 }
 
 /* ================= COVER ================= */
