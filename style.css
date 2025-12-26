@@ -1,6 +1,24 @@
-/* ============================================================
-   GLOBAL & RESET
-   ============================================================ */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden; /* Mencegah geser kanan-kiri */
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    -webkit-text-size-adjust: 100%; /* Mencegah browser otomatis besarin teks */
+}
+
+/* Pastikan semua gambar tidak lebih lebar dari layar HP */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Pastikan kontainer utama pas di layar */
+section {
+    width: 100%;
+    box-sizing: border-box; /* Padding tidak menambah lebar elemen */
+}
+
 body {
     margin: 0;
     font-family: "Poppins", sans-serif;
